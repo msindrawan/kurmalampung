@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurma Lampung - Katalog Resmi</title>
+    
+    <!-- Google Fonts: Amiri (Islamic feel) & Plus Jakarta Sans (Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Config for Mocca Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mocca: {
+                            50: '#f9f5f1',
+                            100: '#efe6dd',
+                            200: '#dfcebf',
+                            300: '#cbb099',
+                            400: '#b48e6f',
+                            500: '#a07855', // Primary Mocca
+                            600: '#93694b',
+                            700: '#7b533f',
+                            800: '#654437', // Dark Text
+                            900: '#52382f',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Amiri"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Islamic Geometric Pattern Background */
+        body {
+            background-color: #efe6dd;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a07855' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Glassmorphism Classes */
+        .glass {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .glass-card:active {
+            transform: scale(0.98);
+        }
+
+        /* Hide scrollbar for category list */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="text-mocca-900 min-h-screen pb-20">
+
+    <!-- Navbar / Header -->
+    <header class="fixed top-0 w-full z-50 glass shadow-sm">
+        <div class="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <!-- Custom Logo Icon (Date Fruit Shape) -->
+                <svg viewBox="0 0 24 24" fill="currentColor" class="text-mocca-600 w-6 h-6">
+                    <path d="M12 2C7 2 5 7 5 12c0 6 3 10 7 10s7-4 7-10c0-5-2-10-7-10z" opacity="0.8"/>
+                    <path d="M11 4c0-1 1-2 1-2s1 1 1 2v4h-2V4z"/>
+                </svg>
+                <h1 class="font-serif text-xl font-bold tracking-wide text-mocca-800">KURMA LAMPUNG</h1>
+            </div>
+            <a href="https://instagram.com/kurma.lampung" target="_blank" class="text-mocca-600 hover:text-mocca-800 transition">
+                <i data-lucide="instagram" class="w-6 h-6"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-md mx-auto pt-20 px-4">
+        
+        <!-- Address & Welcome Card -->
+        <div class="glass-card rounded-2xl p-5 mb-6 text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-20 h-20 bg-mocca-300 rounded-full blur-2xl opacity-30"></div>
+            <div class="absolute bottom-0 left-0 -mb-4 -ml-4 w-20 h-20 bg-mocca-500 rounded-full blur-2xl opacity-20"></div>
+            
+            <p class="text-xs font-bold text-mocca-500 uppercase tracking-widest mb-1">Ahlan Wa Sahlan</p>
+            <p class="text-sm text-mocca-700 leading-relaxed mb-3">
+                Jl. Pulau Batam Raya no. 19<br>Way Halim Permai, Bandar Lampung
+            </p>
+            <a href="https://maps.app.goo.gl/4sut1Fw8S1PyzQkT9" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-white bg-mocca-600 px-3 py-1.5 rounded-full shadow hover:bg-mocca-700 transition">
+                <i data-lucide="map-pin" class="w-3 h-3"></i> Lihat Lokasi
+            </a>
+        </div>
+
+        <!-- Dynamic Date Display -->
+        <div class="mb-6 flex items-center justify-between bg-white/60 p-3 rounded-xl border border-mocca-200">
+            <div class="flex items-center gap-3">
+                <div class="bg-mocca-100 p-2 rounded-lg text-mocca-600">
+                    <i data-lucide="calendar-days" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase font-bold text-mocca-500">Harga Kurma Hari Ini</p>
+                    <p id="date-display" class="text-sm font-semibold text-mocca-900">Memuat tanggal...</p>
+                </div>
+            </div>
+            <div class="animate-pulse w-2 h-2 bg-green-500 rounded-full"></div>
+        </div>
+
+        <!-- Category Filter (Sticky) -->
+        <div class="sticky top-[60px] z-40 bg-[#efe6dd]/95 backdrop-blur-sm py-2 mb-4 -mx-4 px-4 overflow-x-auto no-scrollbar flex gap-2" id="category-container">
+            <!-- Categories injected by JS -->
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 gap-4">
+            <!-- Products injected by JS -->
+        </div>
+
+        <!-- Footer Info -->
+        <div class="mt-10 text-center text-mocca-500 text-xs pb-24">
+            <p>© 2024 Kurma Lampung</p>
+            <p>Menyediakan Produk Berkualitas & Halal</p>
+        </div>
+    </main>
+
+    <!-- Floating Action Button (WA) -->
+    <a href="https://wa.me/6285669669222?text=Assalamualaikum,%20saya%20mau%20pesan%20produk%20Kurma%20Lampung..." target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20bd5a] transition-all hover:scale-105 flex items-center gap-2 z-50 group">
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 text-sm font-bold">Pesan Sekarang</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+    </a>
+
+    <!-- Javascript Logic -->
+    <script>
+        // --- 1. Data Produk ---
+        const products = [
+            { id: 1, category: 'kurma', name: 'Kurma Sukkari 3 kg', price: 175000, unit: 'per dus' },
+            { id: 2, category: 'kurma', name: 'Kurma Sukkari 1 kg', price: 65000, unit: 'per pack' },
+            { id: 3, category: 'kurma', name: 'Kurma Sukkari Premium', price: 35000, unit: '500 gr' },
+            { id: 4, category: 'kurma', name: 'Kurma Ajwa', price: 100000, unit: '½ kg' },
+            { id: 5, category: 'kurma', name: 'Kurma Ruthob', price: 85000, unit: 'per box' },
+            { id: 6, category: 'kurma', name: 'Kurma Khalas', price: 26000, unit: '500 gr' },
+            { id: 7, category: 'kurma', name: 'Sari Kurma Azzahra Platinum', price: 27000, unit: 'botol' },
+            
+            { id: 8, category: 'madu', name: 'Madu Mujahid 1 kg', price: 85000, unit: 'jar' },
+            { id: 9, category: 'madu', name: 'Madu Mujahid ½ kg', price: 45000, unit: 'jar' },
+            { id: 10, category: 'madu', name: 'Madu Gholiban 1 kg', price: 62000, unit: 'jar' },
+            
+            { id: 11, category: 'herbal', name: 'Habbatussaudah', price: 35000, unit: '100 kapsul' },
+            { id: 12, category: 'herbal', name: 'Himsalt', price: 12000, unit: '250 gr' },
+            { id: 13, category: 'herbal', name: 'Chia Seed', price: 28000, unit: '190 gr' },
+            { id: 14, category: 'herbal', name: 'Kayu Secang Serut', price: 7000, unit: 'pack' },
+            
+            { id: 15, category: 'lain', name: 'Kacang Arab', price: 30000, unit: '½ kg' },
+            { id: 16, category: 'lain', name: 'Air Zamzam 1 liter', price: 50000, unit: 'botol' },
+            { id: 17, category: 'lain', name: 'Paket Oleh Oleh Umroh', price: '10.000 - 35.000', unit: 'paket', isRange: true }
+        ];
+
+        const categories = [
+            { id: 'all', label: 'Semua' },
+            { id: 'kurma', label: 'Kurma' },
+            { id: 'madu', label: 'Madu' },
+            { id: 'herbal', label: 'Herbal' },
+            { id: 'lain', label: 'Lain-lain' }
+        ];
+
+        // --- 2. Format Rupiah ---
+        const formatRupiah = (number) => {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(number);
+        };
+
+        // --- 3. Render Tanggal Otomatis ---
+        function updateDate() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = now.toLocaleDateString('id-ID', options);
+            document.getElementById('date-display').textContent = dateString;
+        }
+
+        // --- 4. Render Kategori ---
+        let activeCategory = 'all';
+
+        function renderCategories() {
+            const container = document.getElementById('category-container');
+            container.innerHTML = categories.map(cat => `
+                <button 
+                    onclick="setCategory('${cat.id}')"
+                    class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
+                        activeCategory === cat.id 
+                        ? 'bg-mocca-600 text-white shadow-md' 
+                        : 'bg-white text-mocca-600 border border-mocca-200 hover:bg-mocca-50'
+                    }">
+                    ${cat.label}
+                </button>
+            `).join('');
+        }
+
+        function setCategory(id) {
+            activeCategory = id;
+            renderCategories();
+            renderProducts();
+        }
+
+        // --- 5. Render Produk ---
+        function renderProducts() {
+            const container = document.getElementById('product-grid');
+            
+            const filteredProducts = activeCategory === 'all' 
+                ? products 
+                : products.filter(p => p.category === activeCategory);
+
+            if (filteredProducts.length === 0) {
+                container.innerHTML = `<div class="text-center py-10 text-mocca-400">Tidak ada produk ditemukan</div>`;
+                return;
+            }
+
+            container.innerHTML = filteredProducts.map(product => {
+                // Logic harga (range atau single)
+                const priceDisplay = product.isRange 
+                    ? `<span class="text-lg font-bold text-mocca-700">Rp ${product.price}</span>` 
+                    : `<span class="text-lg font-bold text-mocca-700">${formatRupiah(product.price)}</span>`;
+
+                // Custom Icon Logic
+                let iconHtml = '';
+                
+                if (product.category === 'kurma') {
+                    // Custom SVG for Date Fruit (Kurma) - Updated Shape
+                    iconHtml = `
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path d="M12 3c-3.87 0-7 4.5-7 10 0 5.5 3.13 9 7 9s7-3.5 7-9c0-5.5-3.13-10-7-10z"/>
+                        <path d="M12 3v-1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10 10c1-2 3-2 4 0" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    </svg>`;
+                } else if (product.category === 'madu') {
+                     iconHtml = `<i data-lucide="droplet" class="w-6 h-6"></i>`;
+                } else if (product.category === 'herbal') {
+                     iconHtml = `<i data-lucide="leaf" class="w-6 h-6"></i>`;
+                } else {
+                     iconHtml = `<i data-lucide="package" class="w-6 h-6"></i>`;
+                }
+
+                return `
+                <div class="glass-card p-4 rounded-xl flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-mocca-100 rounded-full flex items-center justify-center text-mocca-500 group-hover:bg-mocca-500 group-hover:text-white transition-colors">
+                            ${iconHtml}
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-mocca-900 leading-tight">${product.name}</h3>
+                            <p class="text-xs text-mocca-500 mt-1 uppercase tracking-wide">${product.unit}</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        ${priceDisplay}
+                        <a href="https://wa.me/6285669669222?text=Halo%20Kurma%20Lampung,%20saya%20tertarik%20pesan%20${encodeURIComponent(product.name)}" target="_blank" class="block mt-1 text-xs text-green-600 font-semibold hover:underline">
+                            Beli <i data-lucide="arrow-right" class="w-3 h-3 inline"></i>
+                        </a>
+                    </div>
+                </div>
+                `;
+            }).join('');
+            
+            // Re-initialize icons for newly added elements
+            lucide.createIcons();
+        }
+
+        // --- Init ---
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDate();
+            renderCategories();
+            renderProducts();
+            lucide.createIcons();
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
